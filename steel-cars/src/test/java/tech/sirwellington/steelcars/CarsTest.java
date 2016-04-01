@@ -15,6 +15,7 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.*;
 import static tech.sirwellington.alchemy.arguments.Arguments.checkThat;
 import static tech.sirwellington.alchemy.arguments.assertions.NumberAssertions.greaterThan;
+import static tech.sirwellington.alchemy.test.junit.ThrowableAssertion.assertThrows;
 
 /**
  *
@@ -29,6 +30,12 @@ public class CarsTest
     {
     }
 
+    @Test
+    public void testCannotInstantiate()
+    {
+        assertThrows(() -> new Cars());
+    }
+    
     @Test
     public void testNewFerrari()
     {

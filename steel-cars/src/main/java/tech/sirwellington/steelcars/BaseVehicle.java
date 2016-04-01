@@ -11,10 +11,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tech.sirwellington.alchemy.annotations.access.Internal;
 import tech.sirwellington.alchemy.annotations.designs.patterns.BuilderPattern;
+import tech.sirwellington.alchemy.annotations.objects.Pojo;
 
 import static tech.sirwellington.alchemy.annotations.designs.patterns.BuilderPattern.Role.PRODUCT;
-import static tech.sirwellington.alchemy.arguments.assertions.Assertions.notNull;
 import static tech.sirwellington.alchemy.arguments.Arguments.checkThat;
+import static tech.sirwellington.alchemy.arguments.assertions.Assertions.notNull;
 import static tech.sirwellington.alchemy.arguments.assertions.NumberAssertions.greaterThan;
 
 /**
@@ -25,13 +26,14 @@ import static tech.sirwellington.alchemy.arguments.assertions.NumberAssertions.g
  */
 @Internal
 @BuilderPattern(role = PRODUCT)
+@Pojo
 class BaseVehicle implements Vehicle
 {
 
     private final static Logger LOG = LoggerFactory.getLogger(BaseVehicle.class);
 
-    protected final Engine engine;
-    protected final int topSpeed;
+    private final Engine engine;
+    private final int topSpeed;
     private final Acceleration acceleration;
     private final Deceleration deceleration;
 
@@ -130,7 +132,7 @@ class BaseVehicle implements Vehicle
     @Override
     public String toString()
     {
-        return "AbstractVehicle{" + "engine=" + engine + ", topSpeed=" + topSpeed + ", acceleration=" + acceleration + ", deceleration=" + deceleration + '}';
+        return "BaseVehicle{" + "engine=" + engine + ", topSpeed=" + topSpeed + ", acceleration=" + acceleration + ", deceleration=" + deceleration + '}';
     }
 
     static CarBuilder builder()
