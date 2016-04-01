@@ -16,6 +16,8 @@ import static tech.sirwellington.alchemy.annotations.designs.patterns.BuilderPat
 import static tech.sirwellington.alchemy.arguments.Arguments.checkThat;
 import static tech.sirwellington.alchemy.arguments.assertions.Assertions.notNull;
 import static tech.sirwellington.alchemy.arguments.assertions.NumberAssertions.greaterThan;
+import static tech.sirwellington.alchemy.arguments.Arguments.checkThat;
+import static tech.sirwellington.alchemy.arguments.assertions.NumberAssertions.greaterThan;
 
 /**
  * This internal package-private class holds the skeleton structure for a Vehicle. It's not designed to be used by the outside
@@ -33,9 +35,9 @@ class BaseVehicle implements Vehicle
     protected final Engine engine;
     protected final int topSpeed;
     private final Acceleration acceleration;
-    private final Decceleration deceleration;
+    private final Deceleration deceleration;
 
-    public BaseVehicle(Engine engine, int topSpeed, Acceleration acceleration, Decceleration deceleration)
+    public BaseVehicle(Engine engine, int topSpeed, Acceleration acceleration, Deceleration deceleration)
     {
         checkThat(engine, acceleration, deceleration)
             .are(notNull());

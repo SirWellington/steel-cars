@@ -12,7 +12,7 @@ package tech.sirwellington.steelcars;
  *
  * @author SirWellington
  */
-public interface Decceleration 
+public interface Deceleration 
 {
     void decelerate();
     
@@ -20,9 +20,9 @@ public interface Decceleration
      * These could also be put into separate classes but are written here for brevity.
      */
     
-    Decceleration SLOWLY = () -> System.out.println("Stopping Slowly");
+    Deceleration SLOWLY = () -> System.out.println("Stopping Slowly");
     
-    Decceleration JERKY = () -> System.out.println("Jamming the Breaks");
+    Deceleration JERKY = () -> System.out.println("Jamming the Breaks");
     
-    Decceleration SMOOTH = () -> System.out.println("Stopping Smoothly");
+    Deceleration SMOOTH = () -> System.out.println("Stopping Smoothly");
 }

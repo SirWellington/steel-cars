@@ -24,7 +24,7 @@ public final class CarBuilder
     private int topSpeed;
     private Engine engine;
     private Acceleration acceleration;
-    private Decceleration decceleration;
+    private Deceleration decceleration;
 
     public static CarBuilder newBuilder()
     {
@@ -56,7 +56,7 @@ public final class CarBuilder
         return this;
     }
 
-    public CarBuilder withDecceleration(Decceleration decceleration)
+    public CarBuilder withDecceleration(Deceleration decceleration)
     {
         Arguments.checkThat(decceleration).is(Assertions.notNull());
         this.decceleration = decceleration;
