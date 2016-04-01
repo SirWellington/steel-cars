@@ -17,6 +17,8 @@ public interface Vehicle
 
     int getTopSpeed();
     
+    Engine getEngine();
+    
     void accelerate();
     
     void decelerate();
