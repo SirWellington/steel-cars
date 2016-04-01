@@ -24,5 +24,5 @@ public interface Decceleration
     
     Decceleration JERKY = () -> System.out.println("Jamming the Breaks");
     
-    Decceleration SMOOTH = () -> System.out.println("Stopping Quickly but Smoothly");
+    Decceleration SMOOTH = () -> System.out.println("Stopping Smoothly");
 }
