@@ -13,9 +13,7 @@ import tech.sirwellington.alchemy.annotations.access.Internal;
 import tech.sirwellington.alchemy.annotations.designs.patterns.BuilderPattern;
 
 import static tech.sirwellington.alchemy.annotations.designs.patterns.BuilderPattern.Role.PRODUCT;
-import static tech.sirwellington.alchemy.arguments.Arguments.checkThat;
 import static tech.sirwellington.alchemy.arguments.assertions.Assertions.notNull;
-import static tech.sirwellington.alchemy.arguments.assertions.NumberAssertions.greaterThan;
 import static tech.sirwellington.alchemy.arguments.Arguments.checkThat;
 import static tech.sirwellington.alchemy.arguments.assertions.NumberAssertions.greaterThan;
 
@@ -94,31 +92,38 @@ class BaseVehicle implements Vehicle
         {
             return true;
         }
+        
         if (obj == null)
         {
             return false;
         }
+        
         if (getClass() != obj.getClass())
         {
             return false;
         }
+        
         final BaseVehicle other = (BaseVehicle) obj;
         if (this.topSpeed != other.topSpeed)
         {
             return false;
         }
+        
         if (this.engine != other.engine)
         {
             return false;
         }
+        
         if (!Objects.equals(this.acceleration, other.acceleration))
         {
             return false;
         }
+        
         if (!Objects.equals(this.deceleration, other.deceleration))
         {
             return false;
         }
+        
         return true;
     }
 
@@ -127,10 +132,10 @@ class BaseVehicle implements Vehicle
     {
         return "AbstractVehicle{" + "engine=" + engine + ", topSpeed=" + topSpeed + ", acceleration=" + acceleration + ", deceleration=" + deceleration + '}';
     }
-    
+
     static CarBuilder builder()
     {
         return new CarBuilder();
     }
-    
+
 }
